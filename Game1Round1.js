@@ -40,23 +40,28 @@ btnZeta.addEventListener('click', () =>  {DisplayQuestion (questionZeta, btnZeta
 //Button function
 function DisplayQuestion(questionCurrent, buttonCurrent){
     for (let button of buttonsAll){
-        button.style.display = 'none';
+        button.style.visibility = 'hidden';
         }    
-        buttonCurrent.style.display = 'inline';
+        buttonCurrent.style.visibility = 'visible';
     if (clue1Text.innerHTML == ''){
         clue1Text.innerHTML = questionCurrent.clue1;
+        clue1Text.className = 'Clue';
         }
         else if (clue2Text.innerHTML == ''){
         clue2Text.innerHTML = questionCurrent.clue2;
+        clue2Text.className = 'Clue';
         }
         else if (clue3Text.innerHTML == ''){
         clue3Text.innerHTML = questionCurrent.clue3;
+        clue3Text.className = 'Clue';
         }
         else if (clue4Text.innerHTML == ''){
         clue4Text.innerHTML = questionCurrent.clue4;
+        clue4Text.className = 'Clue';
         }
         else if (answerText.innerHTML == ''){
         answerText.innerHTML = questionCurrent.answer;
+        answerText.className = 'AnswerDisplayed';
         }
         else{
         clue1Text.innerHTML = '';
@@ -64,8 +69,13 @@ function DisplayQuestion(questionCurrent, buttonCurrent){
         clue3Text.innerHTML = '';
         clue4Text.innerHTML = '';
         answerText.innerHTML = '';
+        clue1Text.className = 'none';
+        clue2Text.className = 'none';
+        clue3Text.className = 'none';
+        clue4Text.className = 'none';
+        answerText.className = 'none';
         for (let button of buttonsAll){
-            button.style.display = 'inline';
+            button.style.visibility = 'visible';
             }
         buttonCurrent.disabled = true;    
     }
